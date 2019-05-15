@@ -24,7 +24,8 @@ function reset() {
     calculatedScore = 0;
     for (var i = 0; i < numOfCrystals; i++) {
         crystalsImage[i].attr("data-crystalvalue", getNewCrystalNumber());
-    }    
+    } 
+    display();   
 }
 
 function display() {
@@ -56,8 +57,7 @@ function init() {
         $("#crystals").append(imageCrystal);
         crystalsImage.push(imageCrystal);
     }
-    reset();
-    display();
+    reset();    
 }
 
 init();
@@ -67,15 +67,16 @@ $(".crystal-image").on("click", function () {
     var crystalValue = ($(this).attr("data-crystalvalue"));
     crystalValue = parseInt(crystalValue);
     calculatedScore += crystalValue;
+    display();
+    
     if (calculatedScore === target) {
         //Won and reset the board
         winCounter ++;
-        reset();
+        setTimeout(function(){reset();}, 800);  
     }
-    if (calculatedScore >= target) {
+    if (calculatedScore > target) {
         //Lost and reset the board
         lossCounter ++;
-        reset();
-    }
-    display();
+        setTimeout(function(){reset();}, 800);       
+    }   
 });
