@@ -1,0 +1,54 @@
+body {
+    background: url("../images/concrete_seamless.png");
+    border: 3px solid grey;
+    max-width: 960px;
+    width: 100%;
+    padding: 0;
+}
+
+.card-body {
+    margin: 0;
+    padding-top: 10;
+}
+
+#game-title {
+    background-color: orange;
+    height: 75px;
+    text-align: center;
+    color: rgb(221, 221, 231);
+    padding: 10px;
+    margin: 0;
+}
+
+#target-score {
+    background-color: rgb(83, 228, 83);
+    height: 75px;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+}
+
+#score-winlose {
+    padding: 10px;
+    background-color: rgb(0, 255, 221);
+}
+
+#images {
+    background-color: rgb(221, 221, 231);
+}
+
+.crystal-image {
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+    border: 10px solid white;
+}
+
+#your-score-board {
+    background-color: aquamarine;
+}
+
+#instruction{
+    line-height: 28px;
+    font-family: "Stylish";
+}
