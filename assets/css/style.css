@@ -31,6 +31,7 @@ body {
 #score-winlose {
     padding: 10px;
     background-color: rgb(0, 255, 221);
+    /* text-align: left; */
 }
 
 #images {
@@ -46,6 +47,7 @@ body {
 
 #your-score-board {
     background-color: aquamarine;
+    line-height: 10px;
 }
 
 #instruction{

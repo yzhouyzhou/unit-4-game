@@ -15,35 +15,37 @@
 <body>
     <!-- Bootstrap Container will hold everything. -->
     <div class="container">
-        <div class="card card-default col-lg-6">
+        <div class="card card-default col-sm-6">
             <div class="card-body">
-                <div class="col-lg-12" id="game-title">
+                <div class="col-sm-12" id="game-title">
                     <h1>CrystalsCollector!</h1>
                 </div>
             </div>
         </div>
-        <div class="card card-default col-lg-5">
+        <div class="card card-default col-sm-5">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-sm-7">
                         <div id="target-score">
                         </div>
                     </div>
-                    <div class="col-lg-4" id="score-winlose">
+                    <div class="col-sm-5" id="score-winlose">
                         <div class="row">
-                            <div class="col-lg-8">Wins</div>
-                            <div class="col-lg-4" id="win-counter">0</div>
+                            <div class="col-sm-8">Wins</div>
+                            <div class="col-sm-2" id="win-counter">0</div>
+                            <!-- <div class="col-sm-2"></div> -->
                         </div>
                         <div class="row">
-                            <div class="col-lg-8">Losses</div>
-                            <div class="col-lg-4" id="loss-counter">0</div>
+                            <div class="col-sm-8">Losses</div>
+                            <div class="col-sm-2" id="loss-counter">0</div>
+                            <!-- <div class="col-sm-2"></div> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="card card-default col-lg-8">
+        <div class="card card-default col-sm-8">
             <div class="card-body" id="images">
                 <!-- Note that this div is now empty. We will fill it dynamically -->
                 <div id="crystals">
@@ -51,17 +53,17 @@
             </div>
         </div>
 
-        <div class="card card-default col-lg-4">
+        <div class="card card-default col-sm-4">
             <div class="card-body" id="your-score-board">
                 <h5 class="card-title">Your total score is: </h5>
                 <hr>
                 <h2 id="your-score"> </h2>
             </div>
         </div>
-        <div class="card card-default col-lg-12">
+        <div class="card card-default col-sm-12">
             <div class="card-body" id="instruction">
                 <p>
-                    Instructor: You will be given a random number at the start of the game.
+                    Instructions: You will be given a random number at the start of the game.
                     There are four crystals above. By clicking on a crystal you will add a
                     specific amount of points to your total score.
                     You win the game by matching your total score to random number.
