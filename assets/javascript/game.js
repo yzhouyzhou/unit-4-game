@@ -70,12 +70,12 @@ $(".crystal-image").on("click", function () {
         //Won, beep and reset the board
         sounds["win"].play();
         winCounter++;
-        setTimeout(function () { reset(); }, 500);
+        setTimeout(function () { reset(); }, 300);
     }
     else if (calculatedScore > target) {
         //Lost, beep and reset the board
         sounds["loss"].play();
         lossCounter++;
-        setTimeout(function () { reset(); }, 500);
+        setTimeout(function () { reset(); }, 300);
     }
 });
