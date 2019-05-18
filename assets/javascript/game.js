@@ -8,6 +8,7 @@ var crystalImages = [
     $("<img src=./assets/images/2-crystal.jpg>"),
     $("<img src=./assets/images/3-crystal.jpg>")
 ];
+var sounds = {};
 var winCounter, lossCounter, target, calculatedScore = 0;
 
 function getNewTargetNumber() {
@@ -42,10 +43,16 @@ function init() {
     winCounter = 0;
     lossCounter = 0;
     calculatedScore = 0;
+    // load images
     for (var i = 0; i < crystalImages.length; i++) {
         crystalImages[i].addClass("crystal-image");
         $("#crystals").append(crystalImages[i]);
     }
+    // add beeps for win or loss
+    sounds["loss"] = new Audio();
+    sounds["loss"].src = "./assets/audio/failBeep.wav";
+    sounds["win"] = new Audio();
+    sounds["win"].src = "./assets/audio/successBeep.wav";
 }
 
 init();
@@ -60,13 +67,15 @@ $(".crystal-image").on("click", function () {
     display();
 
     if (calculatedScore === target) {
-        //Won and reset the board
+        //Won, beep and reset the board
+        sounds["win"].play();
         winCounter++;
-        setTimeout(function () { reset(); }, 200);
+        setTimeout(function () { reset(); }, 500);
     }
-    if (calculatedScore > target) {
-        //Lost and reset the board
+    else if (calculatedScore > target) {
+        //Lost, beep and reset the board
+        sounds["loss"].play();
         lossCounter++;
-        setTimeout(function () { reset(); }, 200);
+        setTimeout(function () { reset(); }, 500);
     }
 });
