@@ -3,12 +3,8 @@ body {
     border: 3px solid grey;
     max-width: 960px;
     width: 100%;
-    padding: 0;
-}
-
-.card-body {
-    margin: 0;
-    padding-top: 10;
+    padding: 20px;
+    margin:20px;
 }
 
 #game-title {
@@ -18,11 +14,11 @@ body {
     color: rgb(221, 221, 231);
     padding: 10px;
     margin: 0;
+    font-size: 28px;
 }
 
 #target-score {
     background-color: rgb(83, 228, 83);
-    height: 75px;
     font-size: 40px;
     text-align: center;
     padding: 10px;
@@ -31,7 +27,7 @@ body {
 #score-winlose {
     padding: 10px;
     background-color: rgb(0, 255, 221);
-    /* text-align: left; */
+    font-size: 28px;
 }
 
 #images {
@@ -39,18 +35,40 @@ body {
 }
 
 .crystal-image {
-    width: 100px;
-    height: 100px;
-    margin: 15px;
-    border: 10px solid white;
+    width: 80px;
+    height: 80px;
+    margin: 10px;
 }
 
 #your-score-board {
     background-color: aquamarine;
-    line-height: 10px;
+    font-size: 20px;
+    border-bottom: 2px solid green;
 }
 
-#instruction{
+#your-score {
+    background-color: aquamarine;
+    font-size: 28px;
+    height: 75px;
+}
+
+#instruction {
     line-height: 28px;
     font-family: "Stylish";
+}
+
+@media screen and (max-width: 880px) {
+    #game-title {
+        font-size: 20px;
+    }
+    .crystal-image {
+        width: 50px;
+        height: 50px;
+    }
+    #your-score-board {
+        font-size: 15px;
+    }
+    #score-winlose {
+        font-size: 15px;
+    }
 }

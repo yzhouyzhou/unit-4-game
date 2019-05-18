@@ -15,63 +15,62 @@
 <body>
     <!-- Bootstrap Container will hold everything. -->
     <div class="container">
-        <div class="card card-default col-sm-6">
-            <div class="card-body">
-                <div class="col-sm-12" id="game-title">
-                    <h1>CrystalsCollector!</h1>
-                </div>
+        <div class="row">
+            <div class="col-sm-4" id="game-title">
+                CrystalsCollector!
             </div>
         </div>
-        <div class="card card-default col-sm-5">
-            <div class="card-body">
+        <div class="row">
+            <div class="col-sm-5">
                 <div class="row">
-                    <div class="col-sm-7">
-                        <div id="target-score">
-                        </div>
-                    </div>
-                    <div class="col-sm-5" id="score-winlose">
+                    <div class="col-sm-6" id="target-score"></div>
+                    <div class="col-sm-6" id="score-winlose">
                         <div class="row">
-                            <div class="col-sm-8">Wins</div>
-                            <div class="col-sm-2" id="win-counter">0</div>
-                            <!-- <div class="col-sm-2"></div> -->
+                            <div class="col-sm-12">
+                                Wins&nbsp;&nbsp;
+                                <span id="win-counter">0</span>
+                            </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-8">Losses</div>
-                            <div class="col-sm-2" id="loss-counter">0</div>
-                            <!-- <div class="col-sm-2"></div> -->
+                            <div class="col-sm-12">
+                                Losses&nbsp;&nbsp;
+                                <span id="loss-counter">0</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="card card-default col-sm-8">
-            <div class="card-body" id="images">
+        <div class="row">
+            <div class="col-sm-8">
                 <!-- Note that this div is now empty. We will fill it dynamically -->
                 <div id="crystals">
                 </div>
             </div>
         </div>
-
-        <div class="card card-default col-sm-4">
-            <div class="card-body" id="your-score-board">
-                <h5 class="card-title">Your total score is: </h5>
-                <hr>
-                <h2 id="your-score"> </h2>
+        <div class="row">
+            <div class="col-sm-4" id="your-score-board">
+                Your total score is:
             </div>
         </div>
-        <div class="card card-default col-sm-12">
-            <div class="card-body" id="instruction">
-                <p>
-                    Instructions: You will be given a random number at the start of the game.
-                    There are four crystals above. By clicking on a crystal you will add a
-                    specific amount of points to your total score.
-                    You win the game by matching your total score to random number.
-                    you lose the game if your total score goes above the radom number.
-                    The value of each crystal is hidden from you until you click on it.
-                    Each time when the game starts, the game will change the values of each crystal.
-                    Good Luck and have fun.
-                </p>
+        <div class="row">
+            <div class="col-sm-4" id="your-score"> </div>
+        </div>
+
+        <div class="row">
+            <div class="card card-default col-sm-12">
+                <div class="card-body" id="instruction">
+                    <p>
+                        Instructions: You will be given a random number at the start of the game.
+                        There are four crystals above. By clicking on a crystal you will add a
+                        specific amount of points to your total score.
+                        You win the game by matching your total score to random number.
+                        you lose the game if your total score goes above the radom number.
+                        The value of each crystal is hidden from you until you click on it.
+                        Each time when the game starts, the game will change the values of each crystal.
+                        Good Luck and have fun.
+                    </p>
+                </div>
             </div>
         </div>
     </div>

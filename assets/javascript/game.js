@@ -2,30 +2,22 @@ var targetScore = $("#target-score");
 var wins = $("#win-counter");
 var loss = $("#loss-counter");
 var yourScore = $("#your-score");
-var crystalsImage = [];
-var numOfCrystals = 4;
+var crystalImages = [
+    $("<img src=./assets/images/0-crystal.jpg>"),
+    $("<img src=./assets/images/1-crystal.jpg>"),
+    $("<img src=./assets/images/2-crystal.jpg>"),
+    $("<img src=./assets/images/3-crystal.jpg>")
+];
 var winCounter, lossCounter, target, calculatedScore = 0;
 
 function getNewTargetNumber() {
-    // random number from 19 to 120
-    var score = Math.floor(Math.random() * 101) + 19;
-    return score;
+    // random number from 19 to 120, Math.floor(Math.random() * (max - min + 1)) + min
+    return Math.floor(Math.random() * (120 - 19 + 1)) + 19;
 }
 
 function getNewCrystalNumber() {
-    // random number from 1 to 12
-    var score = Math.floor(Math.random() * 11) + 1;
-    return score;
-}
-
-function reset() {
-    // new target number and new number for each crystal ball and zero your score 
-    target = getNewTargetNumber();
-    calculatedScore = 0;
-    for (var i = 0; i < numOfCrystals; i++) {
-        crystalsImage[i].attr("data-crystalvalue", getNewCrystalNumber());
-    } 
-    display();   
+    // random number from 1 to 12, Math.floor(Math.random() * (max - min + 1)) + min
+    return Math.floor(Math.random() * (12 - 1 + 1)) + 1;
 }
 
 function display() {
@@ -35,48 +27,46 @@ function display() {
     yourScore.text(calculatedScore);
 }
 
+function reset() {
+    // reset your score, new target number and new number for each crystal  
+    calculatedScore = 0;
+    target = getNewTargetNumber();
+    for (var i = 0; i < crystalImages.length; i++) {
+        crystalImages[i].attr("data-crystalvalue", getNewCrystalNumber());
+    }
+    display();
+}
+
 function init() {
     // the first time initialize the board and load crystal images
     winCounter = 0;
-    lossCounter = 0;  
+    lossCounter = 0;
     calculatedScore = 0;
-    // Next we create a for loop to create crystals for every numberOption.
-    for (var i = 0; i < numOfCrystals; i++) {
-
-        // For each iteration, we will create an imageCrystal
-        var imageCrystal = $("<img>");
-
-        // First each crystal will be given the class ".crystal-image".
-        // This will allow the CSS to take effect.
-        imageCrystal.addClass("crystal-image");
-
-        // Each imageCrystal will be given a src link to the crystal image
-        imageCrystal.attr("src", "./assets/images/" + i + "-crystal.jpg");
-
-        // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-        $("#crystals").append(imageCrystal);
-        crystalsImage.push(imageCrystal);
+    for (var i = 0; i < crystalImages.length; i++) {
+        crystalImages[i].addClass("crystal-image");
+        $("#crystals").append(crystalImages[i]);
     }
-    reset();    
 }
 
 init();
+reset();
 
 $(".crystal-image").on("click", function () {
     // listen to click event and calculate your score
     var crystalValue = ($(this).attr("data-crystalvalue"));
     crystalValue = parseInt(crystalValue);
     calculatedScore += crystalValue;
+
     display();
-    
+
     if (calculatedScore === target) {
         //Won and reset the board
-        winCounter ++;
-        setTimeout(function(){reset();}, 800);  
+        winCounter++;
+        setTimeout(function () { reset(); }, 200);
     }
     if (calculatedScore > target) {
         //Lost and reset the board
-        lossCounter ++;
-        setTimeout(function(){reset();}, 800);       
-    }   
+        lossCounter++;
+        setTimeout(function () { reset(); }, 200);
+    }
 });
